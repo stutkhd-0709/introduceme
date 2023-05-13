@@ -1,6 +1,5 @@
 version: '3.9'
-volumes:
-  config:
+
 services:
   lcl:
     container_name: todo-lcl
