@@ -1,14 +1,32 @@
 version: '3.9'
 
 services:
-  lcl:
-    container_name: todo-lcl
-    image: todo-lcl
+  base:
+    image: todo-base
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - ./:/app
+
+  client:
+    image: todo-client
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./packages/frontend:/app
     ports:
-      - 4000:4000
-    command: npm run dev
+      - 4444:8080
+    command: npm run client:dev
+
+  server:
+    image: todo-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./packages/backend:/app
+    ports:
+      - 4445:4000
+    command: npm run server:dev

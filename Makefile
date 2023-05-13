@@ -1,5 +1,8 @@
 up:
-	docker-compose up lcl
+	docker-compose up
 
-lcl-bash:
-	docker-compose exec lcl bash
+base-bash:
+	docker-compose exec base bash
+
+base-debug-bash:
+	docker-compose run --rm base bash
