@@ -1,0 +1,12 @@
+version: '3.9'
+volumes:
+  config:
+services:
+  lcl:
+    container_name: todo-lcl
+    image: todo-lcl
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
