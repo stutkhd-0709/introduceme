@@ -1,32 +1,26 @@
 version: '3.9'
 
 services:
-  base:
-    image: todo-base
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/app
-
   client:
     image: todo-client
     build:
-      context: .
+      context: docker/frontend
       dockerfile: Dockerfile
     volumes:
       - ./packages/frontend:/app
+      - ./node_modules:/app/node_modules
     ports:
-      - 4444:8080
+      - 4444:5173
     command: npm run client:dev
 
   server:
     image: todo-server
     build:
-      context: .
+      context: docker/backend
       dockerfile: Dockerfile
     volumes:
       - ./packages/backend:/app
+      - ./node_modules:/app/node_modules
     ports:
       - 4445:4000
     command: npm run server:dev

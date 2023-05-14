@@ -1,8 +1,8 @@
+build:
+	docker-compose build
+
 up:
-	docker-compose up
+	make build && docker-compose up
 
-base-bash:
-	docker-compose exec base bash
-
-base-debug-bash:
-	docker-compose run --rm base bash
+run-root-bash:
+	docker run --rm -it --name root-todo -w /app -v ${PWD}:/app node:18 bash
