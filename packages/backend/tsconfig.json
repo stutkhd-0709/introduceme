@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "strict": true,
+    // esModuleInterop: nodeでES Moduleで書いた場合、コンパイル時に自動でCommon.jsに変換してくれる
+    // そのためimport文を使用可能
+    // 参考: https://omochizo.netlify.app/posts/2020/08/commonjs-esm/
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    // ファイル名の大文字小文字の違いを判定し、インポート文で間違っていた場合にコンパイルエラーを出すかどうか
+    // Linuxは大文字小文字を区別するため、それ用にチェックしておいた方がいいらしい
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules"]
+}

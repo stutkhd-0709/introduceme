@@ -1,8 +1,12 @@
 version: '3.9'
 
+volumes:
+  todo-db-data:
+
 services:
   client:
     image: todo-client
+    container_name: todo-client
     build:
       context: docker/frontend
       dockerfile: Dockerfile
@@ -15,6 +19,7 @@ services:
 
   server:
     image: todo-server
+    container_name: todo-server
     build:
       context: docker/backend
       dockerfile: Dockerfile
@@ -24,3 +29,17 @@ services:
     ports:
       - 4445:4000
     command: npm run server:dev
+
+  db:
+    image: mysql:8.0
+    platform: linux/x86_64
+    container_name: todo-db
+    volumes:
+      - todo-db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: todo_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - 4500:3306
