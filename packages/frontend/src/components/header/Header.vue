@@ -2,9 +2,11 @@
   <header class="l-header">
     <div class="l-header-title">IntroduceMe</div>
   </header>
+  <HeaderNavigation />
 </template>
 
 <script setup lang="ts">
+import HeaderNavigation from './HeaderNavigation.vue'
 </script>
 
 <style>
