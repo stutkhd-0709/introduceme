@@ -1,18 +1,13 @@
 <template>
   <div class="l-home-page">
     <div class="f-container">
-      <div class="card-container">
-        <!-- use loop -->
-        <UserCard />
-        <UserCard />
-        <UserCard />
-      </div>
+      <UserCardList/>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import UserCard from '@/components/user_card/UserCard.vue';
+import UserCardList from '@/components/user_card/UserCardList.vue';
 
 </script>
 
@@ -28,8 +23,9 @@ import UserCard from '@/components/user_card/UserCard.vue';
   padding-top: 164px
 }
 
-.card-container {
+.card-list-container {
   display: flex;
-  gap: 0 68px;
+  flex-wrap: wrap;
+  gap: 112px 68px;
 }
 </style>
