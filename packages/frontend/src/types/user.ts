@@ -1,8 +1,9 @@
 type UserDescription = {
-  short_self_intro: String
+  short_self_intro: string,
 }
 
 export type User = {
-  name: String,
-  descriptions: UserDescription
+  name: string,
+  icon?: string,
+  desc?: UserDescription
 }

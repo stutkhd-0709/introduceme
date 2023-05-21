@@ -8,47 +8,59 @@
 
 <script setup lang="ts">
 import UserCard from "./UserCard.vue"
+import type { User } from "@/types/user"
 import { ref } from 'vue'
 
-const users = ref([
+const sampleUsers = [
   {
     name: 'Akira',
-    descriptions: {
-      short_self_intro: 'よろしくお願いします！'
+    icon: undefined,
+    desc: {
+      short_self_intro: 'よろしくお願いします！',
     }
   },
   {
     name: 'Kenji',
-    descriptions: {
-      short_self_intro: 'よろしくお願いします！'
+    icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLuW2xcJlrbLdQDiw-wTCsElgoQIvbaXRZ40pCZX9vxYuLh1W3njnzZ_SZddy3nVpXeTDZqdKX6rI-MQBECmDwL80RPHDA4d5_lBe89Z8YTbBw9LSlnkTYFbKFmLvObN6tMyyCx7kPVQiMVILHoqH-ze4DDH1n6tf6PIo06l_6w95xdmZ40m7X7Bzx9g/s664/rennai_kaeruka.png",
+    desc: {
+      short_self_intro: 'よろしくお願いします！',
     }
   },
   {
     name: 'Akiko',
-    descriptions: {
-      short_self_intro: 'よろしくお願いします！'
+    icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLuW2xcJlrbLdQDiw-wTCsElgoQIvbaXRZ40pCZX9vxYuLh1W3njnzZ_SZddy3nVpXeTDZqdKX6rI-MQBECmDwL80RPHDA4d5_lBe89Z8YTbBw9LSlnkTYFbKFmLvObN6tMyyCx7kPVQiMVILHoqH-ze4DDH1n6tf6PIo06l_6w95xdmZ40m7X7Bzx9g/s664/rennai_kaeruka.png",
+    desc: {
+      short_self_intro: 'よろしくお願いします！',
     }
   },
   {
     name: 'Eri',
-    descriptions: {
-      short_self_intro: 'よろしくお願いします！'
+    icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLuW2xcJlrbLdQDiw-wTCsElgoQIvbaXRZ40pCZX9vxYuLh1W3njnzZ_SZddy3nVpXeTDZqdKX6rI-MQBECmDwL80RPHDA4d5_lBe89Z8YTbBw9LSlnkTYFbKFmLvObN6tMyyCx7kPVQiMVILHoqH-ze4DDH1n6tf6PIo06l_6w95xdmZ40m7X7Bzx9g/s664/rennai_kaeruka.png",
+    desc: {
+      short_self_intro: 'よろしくお願いします！',
     }
   },
   {
     name: 'Satoru',
-    descriptions: {
-      short_self_intro: 'よろしくお願いします！'
+    icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLuW2xcJlrbLdQDiw-wTCsElgoQIvbaXRZ40pCZX9vxYuLh1W3njnzZ_SZddy3nVpXeTDZqdKX6rI-MQBECmDwL80RPHDA4d5_lBe89Z8YTbBw9LSlnkTYFbKFmLvObN6tMyyCx7kPVQiMVILHoqH-ze4DDH1n6tf6PIo06l_6w95xdmZ40m7X7Bzx9g/s664/rennai_kaeruka.png",
+    desc: {
+      short_self_intro: 'よろしくお願いします！',
     }
   },
   {
     name: 'Goro',
-    descriptions: {
-      short_self_intro: 'よろしくお願いします！'
+    icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLuW2xcJlrbLdQDiw-wTCsElgoQIvbaXRZ40pCZX9vxYuLh1W3njnzZ_SZddy3nVpXeTDZqdKX6rI-MQBECmDwL80RPHDA4d5_lBe89Z8YTbBw9LSlnkTYFbKFmLvObN6tMyyCx7kPVQiMVILHoqH-ze4DDH1n6tf6PIo06l_6w95xdmZ40m7X7Bzx9g/s664/rennai_kaeruka.png",
+    desc: {
+      short_self_intro: 'よろしくお願いします！',
     }
   }
-])
+]
 
+const users = ref<User[]>([])
+
+sampleUsers.forEach(elem => {
+  users.value.push(elem)
+})
 </script>
 
 <style>
