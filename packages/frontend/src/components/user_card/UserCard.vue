@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import type { User } from "@/types/user"
-import UserIcon from "./UserIcon.vue"
+import UserIcon from "../UserIcon.vue"
 const props = defineProps<{
   user: User
 }>()
