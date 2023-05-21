@@ -3,6 +3,7 @@ type UserDescription = {
 }
 
 export type User = {
+  id: BigInteger,
   name: string,
   icon?: string,
   desc?: UserDescription

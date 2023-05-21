@@ -1,7 +1,10 @@
 <template>
   <div class="user-card">
     <div class="user-card-container">
-      <UserIcon :img_path="imgPath"/>
+      <UserIcon
+        :img_path="imgPath"
+        :link_path="userPagePath"
+      />
       <div class="user-info">
         <div class="user-name">{{ user.name }}</div>
         <div class="user-desc">{{ user.desc?.short_self_intro }}</div>
@@ -18,7 +21,7 @@ const props = defineProps<{
 }>()
 
 const imgPath = props.user.icon || "https://blogger.googleusercontent.com/img/a/AVvXsEgxKdda6qGSPvSr5Gdq0r1vD_Dit9bDYYp61AzM1qpHwc3X1kA6emDqfEK19ktFzpOrN3_FQEu6bhojy1kFySAC26hC5MNUzh7C4mbrgk-WK_rzMCarZTbBAmmA-ogQRsFfPztTRNxmOjvRRewRrbQHDw6EpQ9ReZ3vEe4kV-1HTU4ZYJ1xgzfnDE0eBg=s563"
-
+const userPagePath = `/users/${props.user.id}` || undefined
 </script>
 
 <style>

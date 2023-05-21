@@ -1,7 +1,9 @@
 <template>
   <header>
     <div class="l-header">
-      <div class="l-header-title">IntroduceMe</div>
+      <a href='/' class="l-header-title">
+        IntroduceMe
+      </a>
       <div class="l-header-btn-container">
         <UserIcon class="user-icon-btn" :img_path="sample_user_img_path"/>
       </div>
@@ -27,10 +29,12 @@ const sample_user_img_path= ref("https://blogger.googleusercontent.com/img/b/R29
 }
 
 .l-header-title {
+  color: black;
   font-family: Comfortaa;
   font-size: 32px;
   margin-top: 28px;
   margin-bottom: 36px;
+  text-decoration: none;
 }
 
 .l-header-btn-container {

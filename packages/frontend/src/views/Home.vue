@@ -2,7 +2,7 @@
   <div class="l-home-page">
     <div class="f-container">
       <UserCardList/>
-      <a href="users" class="load-more-link">もっと見る<span>→</span></a>
+      <a href="/users" class="load-more-link">もっと見る<span>→</span></a>
     </div>
   </div>
 </template>

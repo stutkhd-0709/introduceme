@@ -18,7 +18,17 @@ const router = createRouter({
       path: '/explore',
       name: 'explore',
       component: Home
-    }
+    },
+    {
+      path: '/users',
+      name: 'userList',
+      component: Home
+    },
+    {
+      path: '/users/:id',
+      name: 'user',
+      component: Home
+    },
   ]
   //   {
   //     path: '/about',

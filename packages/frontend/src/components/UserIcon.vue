@@ -1,13 +1,18 @@
 <template>
   <div class="user-icon">
-    <img :src="img_path">
+    <RouterLink :to="linkPath">
+      <img :src="img_path">
+    </RouterLink>
   </div>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
   img_path: string
+  link_path?: string
 }>()
+
+const linkPath = props.link_path || '/error/404'
 </script>
 
 <style>
