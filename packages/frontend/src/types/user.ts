@@ -2,8 +2,8 @@ type UserDescription = {
   short_self_intro: string,
 }
 
-export type User = {
-  id: BigInteger,
+export interface User {
+  id: Number,
   name: string,
   icon?: string,
   desc?: UserDescription

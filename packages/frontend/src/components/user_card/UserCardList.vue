@@ -11,7 +11,7 @@ import UserCard from "./UserCard.vue"
 import type { User } from "@/types/user"
 import { ref } from 'vue'
 
-const sampleUsers = [
+const sampleUsers: User[] = [
   {
     id: 1,
     name: 'Akira',
