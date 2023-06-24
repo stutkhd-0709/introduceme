@@ -1,5 +1,5 @@
 export default {
-  preset: 'ts-jest',
+  preset: 'ts-jest/presets/js-with-ts-esm', // TSをESM構文に変換する
   transformIgnorePatterns: ["/node_modules/(?!three/examples/)"],
   transform: {
     "node_modules/three/examples/.+.(j|t)sx?$": "ts-jest",
