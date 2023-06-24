@@ -1,4 +1,16 @@
-## TODO APP
+## introduceme
+
+## パッケージインストール
+```
+make run-root-bash
+
+# frontendに入れたい場合
+> npm install <package> -w frontend
+# backendに入れたい場合
+> npm install <package> -w backend
+# 共通パッケージを入れたい場合
+> npm install <package> --workspaces
+```
 
 ## 達成したいこと
 ### 構成
