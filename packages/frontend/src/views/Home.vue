@@ -20,7 +20,7 @@ import UserCardList from '@/components/user_card/UserCardList.vue';
 .f-container {
   max-width: 740px;
   margin: 0 auto;
-  padding-top: 164px;
+  padding-top: 120px;
   text-align: center;
 }
 

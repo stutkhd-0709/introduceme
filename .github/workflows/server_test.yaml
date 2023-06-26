@@ -1,0 +1,30 @@
+name: 'server_test'
+
+on:
+  push:
+    paths:
+      - 'packages/backend/**'
+
+jobs:
+  server-tests:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Chekout
+        uses: actions/checkout@v3
+        with:
+          sparse-checkout: |
+            .
+            packages/backend
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
+
+      - name: Install
+        run: npm ci -w backend
+
+      - name: Test
+        run: npm run test
+        working-directory: ./packages/backend

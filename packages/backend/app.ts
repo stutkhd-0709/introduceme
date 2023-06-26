@@ -1,6 +1,7 @@
 import express from 'express'
 
 const app = express()
+app.use(express.json())
 
 // task
 app.get('/api/tasks', async (req: express.Request, res: express.Response) => {
@@ -23,8 +24,8 @@ app.get('/api/tasks/:id', async (req: express.Request, res: express.Response) =>
   })
 })
 
-app.post('/api/tasks', async (req: express.Request, res: express.Response) => {
-  res.status(200)
+app.post('/api/tasks/:id', async (req: express.Request, res: express.Response) => {
+  res.status(200).json({name: 'success'})
 })
 
 app.put('/api/tasks/:id', async (req: express.Request, res: express.Response) => {
@@ -37,7 +38,4 @@ app.delete('/api/tasks/:id', async (req: express.Request, res: express.Response)
   res.status(200)
 })
 
-
-app.listen(4445, () => {
-  console.log('server running on port 4445')
-})
+export default app

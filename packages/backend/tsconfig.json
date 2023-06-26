@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "outDir": "./dist",
+    "target": "ES2022",
+    "module": "esnext", // ESM有効化
+    "outDir": "./dist", // コンパイルコード出力先
     "strict": true,
     // esModuleInterop: nodeでES Moduleで書いた場合、コンパイル時に自動でCommon.jsに変換してくれる
     // そのためimport文を使用可能
@@ -11,8 +11,19 @@
     "skipLibCheck": true,
     // ファイル名の大文字小文字の違いを判定し、インポート文で間違っていた場合にコンパイルエラーを出すかどうか
     // Linuxは大文字小文字を区別するため、それ用にチェックしておいた方がいいらしい
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    // JSファイルの利用許可オプション
+    // ts-jestの警告回避のため
+    "allowJs": true,
+    // モジュール拡張子から、import対処のファイルを検索する方法を指定
+    // CommonJSのモジュールを利用する場合を考慮し、nodeにする
+    "moduleResolution": "node"
   },
   "include": ["./**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "ts-node": {
+    // ts-nodeはプリコンパイルせずに、Node.jsが直接TSを実行できる
+    // ts-nodeはtsconfigを自動で読み込む
+    "esm": true
+  }
 }

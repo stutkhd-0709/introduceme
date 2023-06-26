@@ -14,7 +14,10 @@ log-server:
 	docker-compose logs -f server
 
 run-root-bash:
-	docker run --rm -it --name root-todo -w /app -v ${PWD}:/app node:18 bash
+	docker run --rm -it --name root-intro -w /app -v ${PWD}:/app node:18 bash
 
 install-all-packages:
-	docker run --rm -it --name root-todo -w /app -v ${PWD}:/app node:18 bash -c 'npm install'
+	docker run --rm -it --name root-intro -w /app -v ${PWD}:/app node:18 bash -c 'npm install'
+
+run-test-server:
+	docker-compose run --rm --entrypoint='npm run test' server
