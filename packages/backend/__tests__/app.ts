@@ -7,6 +7,6 @@ describe('POST /api/tasks/:id', () => {
     const response = await request(app).post('/api/tasks/1').send({
       sample: 1
     })
-    expect(response.status).toBe(300)
+    expect(response.status).toBe(200)
   })
 })
