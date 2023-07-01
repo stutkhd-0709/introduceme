@@ -1,7 +1,7 @@
 version: '3.9'
 
 volumes:
-  db-data:
+  db-volume:
 
 services:
   client:
@@ -28,10 +28,9 @@ services:
 
   db:
     image: mysql:8.0
-    platform: linux/x86_64
     container_name: app-intro-db
     volumes:
-      - db-data:/var/lib/mysql
+      - db-volume:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: todo_db
