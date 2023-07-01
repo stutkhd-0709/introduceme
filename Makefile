@@ -7,6 +7,12 @@ up:
 down:
 	docker-compose down
 
+stop-client:
+	docker-compose stop client
+
+stop-server:
+	docker-compose stop server
+
 log-client:
 	docker-compose logs -f client
 

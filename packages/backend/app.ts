@@ -1,7 +1,9 @@
 import express from 'express'
+import logMiddleware from './middlewares/logger.js'
 
 const app = express()
 app.use(express.json())
+app.use(logMiddleware)
 
 // task
 app.get('/api/tasks', async (req: express.Request, res: express.Response) => {
