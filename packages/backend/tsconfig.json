@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "esnext", // ESM有効化
+    "module": "ES2020", // ESM有効化
     "outDir": "./dist", // コンパイルコード出力先
     "strict": true,
     // esModuleInterop: nodeでES Moduleで書いた場合、コンパイル時に自動でCommon.jsに変換してくれる
