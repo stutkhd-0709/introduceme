@@ -1,5 +1,5 @@
 import express from 'express'
-import logMiddleware from './middlewares/logger.js'
+import logMiddleware from './middlewares/logger'
 
 const app = express()
 app.use(express.json())
