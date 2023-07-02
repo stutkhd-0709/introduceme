@@ -6,5 +6,6 @@ export interface User {
   id: Number,
   name: string,
   icon?: string,
-  desc?: UserDescription
+  desc?: UserDescription,
+  email?: string,
 }
